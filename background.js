@@ -10,7 +10,7 @@ function isReddit(tabId, changeInfo, tab) {
 
 function payload(tabId, changeInfo, tab) {
 
-
+//	chrome.tabs.executeScript(tab.id, {code: 'chrome.storage.sync.clear()'}); // <--- Clear
     chrome.tabs.executeScript({ file: "jquery-1.11.1.min.js" }, function() {
     	if (changeInfo.status == "complete")
         chrome.tabs.executeScript(null, { file: "block.js" }, function() {
@@ -18,9 +18,8 @@ function payload(tabId, changeInfo, tab) {
 	});
 }
 
-chrome.tabs.onUpdated.addListener(isReddit);
 
-// Run the reddit script
+chrome.tabs.onUpdated.addListener(isReddit);
 chrome.tabs.onUpdated.addListener(payload);
 
 

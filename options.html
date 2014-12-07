@@ -1,12 +1,35 @@
 <!DOCTYPE html>
 <html>
-<head><title>Things</title></head>
+<head>
+	<title>Things</title>
+
+<style>
+
+.
+
+
+</style>
+
+</head>
 <body>
 
-<form action="save.addlater">
-<input type="text" name="ToDo" placeholder="I want to...">
-<input type="submit" value="Add">
+Reblock Frequency:
+<input type="num" id="frequency" placeholder="Minutes">
+<button id="save">Set</button>
+<br>
+<br>
+
+<form>
+Things I want to do:
+<input type="text" id="thing" placeholder="I want to...">
+<button id="add">Add</button>
+<button id='remove'>Remove</button>
 </form>
+
+<div id="status"></div>
+<div id="added"></div>
+<div id="list"></div>
+
 
 <script src="options.js"></script>
 </body>
