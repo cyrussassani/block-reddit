@@ -1,34 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Things</title>
-
-<style>
-
-.
-
-
-</style>
-
+	<title>Block Reddit</title>
+	<link rel="stylesheet" href="/main.css">
 </head>
+
+
 <body>
 
-Reblock Frequency:
-<input type="num" id="frequency" placeholder="Minutes">
-<button id="save">Set</button>
-<br>
-<br>
-
-<form>
-Things I want to do:
-<input type="text" id="thing" placeholder="I want to...">
-<button id="add">Add</button>
-<button id='remove'>Remove</button>
-</form>
-
-<div id="status"></div>
-<div id="added"></div>
-<div id="list"></div>
+<img id="pear" src="pear.png">
+<div id="settings">
+	Reblock Frequency:
+	<input type="num" id="frequency" placeholder="Minutes" maxlength="5">
+	<button id="save">Set</button>
+	<p style="text-align:center; font-size:0.8em" id="status"></p>
+	<br>
+</div>
 
 
 <script src="options.js"></script>

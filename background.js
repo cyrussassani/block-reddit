@@ -18,10 +18,6 @@ function payload(tabId, changeInfo, tab) {
 	});
 }
 
-
 chrome.tabs.onUpdated.addListener(isReddit);
 chrome.tabs.onUpdated.addListener(payload);
-
-
-
 

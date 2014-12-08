@@ -1,0 +1,53 @@
+
+
+.green {
+	background-color:#B2FFCC;
+}
+
+#pear {
+	height:200px;
+	position:relative;
+	left:45%;
+	top:250px;
+}
+
+#settings {
+	font-size:20px;
+	width:500px;
+	position:relative;
+	left:40%;
+	top:300px;
+}
+
+#quickAdd {
+	font-size:1.5em;
+	display:inline;
+}
+
+#quickOptions {
+	font-size:1.2em;
+	float:right;
+	display:inline;
+	margin-bottom:10px;
+}
+
+a:link.optionsLink    {color:#00a0ea; background-color:transparent; text-decoration:none}
+a:visited.optionsLink {color:#00a0ea; background-color:transparent; text-decoration:none}
+a:hover.optionsLink   {color:#FF0066; background-color:transparent; transition: all 0.2s ease 0s;}
+
+.flash
+{
+    -webkit-animation-name: change;
+    -webkit-animation-duration: 600ms;
+    -webkit-animation-iteration-count: 1;
+    background-color:#B2FFCC;
+}
+
+@-webkit-keyframes change {
+    0% {
+        background-color: #FFB7D4;
+    }
+    50% {
+        background-color: #B2FFCC;
+    }
+}

@@ -1,7 +1,7 @@
 {
   "name": "Block Reddit",
-  "version": "0.1",
-  "description": "An extension to block reddit and offer an alternative.",
+  "version": "1.0.0",
+  "description": "Reminds you to get off Reddit.",
 
   "background": {
     "scripts": ["background.js"]
@@ -9,19 +9,19 @@
 
   "manifest_version": 2,
     "icons": {
-    "16": "pear.png",
-    "48": "pear.png",
-    "128": "pear.png"
+      "16": "pear.png",
+      "48": "pear.png",
+      "128": "pear.png"
   },
   "page_action": {
-    "default_icon": {                    // optional
-      "19": "pear.png",           // optional
-      "38": "pear.png"            // optional
+    "default_icon": {
+      "19": "pear.png",
+      "38": "pear.png"
     },
-    "default_popup": "window.html"
+    "default_popup": "popup.html"
   },
   "options_page": "options.html"
 ,  "permissions": [
-    "tabs", "*://*.reddit.com/*"
+    "tabs", "*://*.reddit.com/*", "storage"
   ]
 }
