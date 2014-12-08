@@ -39,18 +39,17 @@ function preAddThing(key) {
   
   var position;
 
-  if(typeof(key) == 'string'){
+  if (key[0] == 'i'){
     position = (key).replace("inputThing", '');
   }
-  else {
-    position = (this.id).replace("add", '');
+  if (key[0] == 'a'){
+    position = (key).replace("add", '');
   }
-
   chrome.storage.sync.get('thingsKey', function (thingObj) {addThing(thingObj.thingsKey, position);});
 }
 
 function addThing (curThing, position) {
-  
+
   if (curThing == undefined) curThing = [];
 
   if ((document.getElementById(['inputThing' + position]).value) == '') {
@@ -66,10 +65,12 @@ function addThing (curThing, position) {
   }
 
   else if ( (document.getElementById(['inputThing' + position]).value) != (curThing[position-1]) ) {
+    console.log("here");
     var toCSS = document.getElementById(['inputThing' + position]);
     toCSS.setAttribute('class', 'flash');
     curThing.splice((position-1), 1, (document.getElementById(['inputThing' + position]).value));
     chrome.storage.sync.set({'thingsKey': curThing});
+    location.reload();
   }
 }
 
@@ -113,11 +114,10 @@ function addInput (inputs) {
     var key = e.which || e.keyCode;
     if (key == 13) preAddThing(this.id);
   });
-  document.getElementById(['add' + inputs]).addEventListener('click', preAddThing);
+  document.getElementById(['add' + inputs]).addEventListener('click', function() { preAddThing(this.id)});
   document.getElementById(['remove' + (inputs-1)]).addEventListener('click', preClearThing);
 
   document.getElementById(['inputThing' + inputs]).focus();
-
 }
 
 function setup (elements) {
@@ -166,7 +166,7 @@ function setup (elements) {
       var key = e.which || e.keyCode;
       if (key == 13) preAddThing(this.id);
     });
-    document.getElementById(['add' + i]).addEventListener('click', preAddThing);
+    document.getElementById(['add' + i]).addEventListener('click', function() { preAddThing(this.id)});
   }
 
   for (i = 1; i < (1+elements.length); i++) {
