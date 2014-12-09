@@ -88,7 +88,7 @@ function addInput (inputs) {
   settings.appendChild(window['removeButton' + (inputs-1)]);
 
   var lineBreak = document.createElement("br");
-  document.body.appendChild(lineBreak);
+  settings.appendChild(lineBreak);
 
   window['thingText' + inputs] = document.createElement("p");
   var textLabel = document.createTextNode("Things I want to do: ");
@@ -127,7 +127,7 @@ function setup (elements) {
   for (i = 1; i <= (1+elements.length); i++) {
     
     var lineBreak = document.createElement("br");
-    document.body.appendChild(lineBreak);
+    settings.appendChild(lineBreak);
 
     window['thingText' + i] = document.createElement("p");
     var textLabel = document.createTextNode("Things I want to do: ");
